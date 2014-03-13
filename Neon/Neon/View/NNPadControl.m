@@ -43,9 +43,8 @@
         tap.numberOfTapsRequired = 1;
         [self addGestureRecognizer:tap];
 
-        UILongPressGestureRecognizer *doubleTap = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
-        doubleTap.numberOfTapsRequired = 1;
-        doubleTap.minimumPressDuration = 0;
+        UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
+        doubleTap.numberOfTapsRequired = 2;
         [self addGestureRecognizer:doubleTap];
         
         UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
@@ -157,7 +156,7 @@
     [self setIsUntapped];
 }
 
-- (void)doubleTap:(UILongPressGestureRecognizer *)gesture
+- (void)doubleTap:(UITapGestureRecognizer *)gesture
 {
     if (gesture.state == UIGestureRecognizerStateBegan) {
         // TODO: make that shit loop
