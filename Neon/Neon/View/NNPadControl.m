@@ -31,25 +31,26 @@
         self.hue = randomFloat(0, 1);
         
         ((CAShapeLayer *)self.layer).path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:cornderRadius].CGPath;
-        ((CAShapeLayer *)self.layer).fillColor = [UIColor colorWithHue:self.hue saturation:0.6 brightness:0.75 alpha:1].CGColor;
+        ((CAShapeLayer *)self.layer).fillColor = [UIColor colorWithRed:247/255.0 green:118/255.0 blue:252/255.0 alpha:1].CGColor;
         
         self.padTop = [[CAShapeLayer alloc] init];
         self.padTop.path = [UIBezierPath bezierPathWithRoundedRect:CGRectOffset(self.bounds, 0, -6) cornerRadius:cornderRadius].CGPath;
-        self.padTop.fillColor = [UIColor colorWithHue:self.hue saturation:1 brightness:1 alpha:1].CGColor;
+        self.padTop.fillColor = [UIColor colorWithRed:238/255.0 green:35/255.0 blue:235/255.0 alpha:1].CGColor;
         [self.layer addSublayer:self.padTop];
         
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];
         tap.numberOfTapsRequired = 1;
         [self addGestureRecognizer:tap];
-        
-        UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
-        doubleTap.numberOfTapsRequired = 2;
+
+        UILongPressGestureRecognizer *doubleTap = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
+        doubleTap.numberOfTapsRequired = 1;
+        doubleTap.minimumPressDuration = 0;
         [self addGestureRecognizer:doubleTap];
         
         UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
+        longPress.minimumPressDuration = 0.25;
         [self addGestureRecognizer:longPress];
-
     }
     return self;
 }
@@ -82,19 +83,18 @@
     animation.fromValue = [NSValue valueWithCATransform3D:self.padTop.transform];
     self.padTop.transform = CATransform3DMakeTranslation(0, 3, 0);
     animation.toValue = [NSValue valueWithCATransform3D:self.padTop.transform];
-    animation.duration = .02;
-    [self.padTop addAnimation:animation forKey:@"transform"];
+    animation.duration = .00003;
+    [self.padTop addAnimation:animation forKey:@"tapping"];
 }
 
 - (void)setIsUntapped
 {
-    
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform"];
     animation.fromValue = [NSValue valueWithCATransform3D:self.padTop.transform];
     self.padTop.transform = CATransform3DIdentity;
     animation.toValue = [NSValue valueWithCATransform3D:self.padTop.transform];
-    animation.duration = .12;
-    [self.padTop addAnimation:animation forKey:@"transform"];
+    animation.duration = .05;
+    [self.padTop addAnimation:animation forKey:@"untapping"];
 }
 
 #pragma mark Touch Events
@@ -104,16 +104,21 @@
     [self setIsTapped];
 }
 
-- (void)singleTap:(UITapGestureRecognizer *)gesture
+- (void)singleTap:(UIGestureRecognizer *)gesture
 {
     // TODO: make that shit play
     [self setIsUntapped];
 }
 
-- (void)doubleTap:(UITapGestureRecognizer *)gesture
+- (void)doubleTap:(UILongPressGestureRecognizer *)gesture
 {
-    // TODO: make that shit loop
-    [self setIsUntapped];
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        // TODO: make that shit loop
+        [self setIsTapped];
+        
+    } else if (gesture.state == UIGestureRecognizerStateEnded) {
+        [self setIsUntapped];
+    }
 }
 
 - (void)longPress:(UILongPressGestureRecognizer *)gesture
