@@ -16,6 +16,7 @@
 		A9B36E1318D15442009004FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9B36E1218D15442009004FB /* Images.xcassets */; };
 		E171DE1E18D163730093F127 /* NNMediaPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E171DE1D18D163730093F127 /* NNMediaPickerViewController.m */; };
 		E171DE2218D163960093F127 /* NNPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E171DE2118D163960093F127 /* NNPadViewController.m */; };
+		E171DE2418D170690093F127 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E171DE2318D170690093F127 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		E171DE1D18D163730093F127 /* NNMediaPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NNMediaPickerViewController.m; path = Controller/NNMediaPickerViewController.m; sourceTree = "<group>"; };
 		E171DE2018D163960093F127 /* NNPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NNPadViewController.h; path = Controller/NNPadViewController.h; sourceTree = "<group>"; };
 		E171DE2118D163960093F127 /* NNPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NNPadViewController.m; path = Controller/NNPadViewController.m; sourceTree = "<group>"; };
+		E171DE2318D170690093F127 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E171DE2418D170690093F127 /* MediaPlayer.framework in Frameworks */,
 				A9B36E0318D15441009004FB /* CoreGraphics.framework in Frameworks */,
 				A9B36E0518D15441009004FB /* UIKit.framework in Frameworks */,
 				A9B36E0118D15441009004FB /* Foundation.framework in Frameworks */,
@@ -71,6 +74,7 @@
 		A9B36DFF18D15441009004FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E171DE2318D170690093F127 /* MediaPlayer.framework */,
 				A9B36E0018D15441009004FB /* Foundation.framework */,
 				A9B36E0218D15441009004FB /* CoreGraphics.framework */,
 				A9B36E0418D15441009004FB /* UIKit.framework */,
