@@ -14,6 +14,8 @@
 		A9B36E0D18D15442009004FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B36E0C18D15442009004FB /* main.m */; };
 		A9B36E1118D15442009004FB /* NNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B36E1018D15442009004FB /* NNAppDelegate.m */; };
 		A9B36E1318D15442009004FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9B36E1218D15442009004FB /* Images.xcassets */; };
+		E171DE1E18D163730093F127 /* NNMediaPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E171DE1D18D163730093F127 /* NNMediaPickerViewController.m */; };
+		E171DE2218D163960093F127 /* NNPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E171DE2118D163960093F127 /* NNPadViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		A9B36E1018D15442009004FB /* NNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNAppDelegate.m; sourceTree = "<group>"; };
 		A9B36E1218D15442009004FB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A9B36E1918D15442009004FB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E171DE1C18D163730093F127 /* NNMediaPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NNMediaPickerViewController.h; path = Controller/NNMediaPickerViewController.h; sourceTree = "<group>"; };
+		E171DE1D18D163730093F127 /* NNMediaPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NNMediaPickerViewController.m; path = Controller/NNMediaPickerViewController.m; sourceTree = "<group>"; };
+		E171DE2018D163960093F127 /* NNPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NNPadViewController.h; path = Controller/NNPadViewController.h; sourceTree = "<group>"; };
+		E171DE2118D163960093F127 /* NNPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NNPadViewController.m; path = Controller/NNPadViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				A9B36E2F18D154AF009004FB /* App Delegate */,
+				E171DE1F18D1637D0093F127 /* Controller */,
 				A9B36E1218D15442009004FB /* Images.xcassets */,
 				A9B36E0718D15441009004FB /* Supporting Files */,
 			);
@@ -101,6 +108,17 @@
 				A9B36E1018D15442009004FB /* NNAppDelegate.m */,
 			);
 			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		E171DE1F18D1637D0093F127 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E171DE1C18D163730093F127 /* NNMediaPickerViewController.h */,
+				E171DE1D18D163730093F127 /* NNMediaPickerViewController.m */,
+				E171DE2018D163960093F127 /* NNPadViewController.h */,
+				E171DE2118D163960093F127 /* NNPadViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +189,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E171DE2218D163960093F127 /* NNPadViewController.m in Sources */,
+				E171DE1E18D163730093F127 /* NNMediaPickerViewController.m in Sources */,
 				A9B36E1118D15442009004FB /* NNAppDelegate.m in Sources */,
 				A9B36E0D18D15442009004FB /* main.m in Sources */,
 			);
