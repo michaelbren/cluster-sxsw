@@ -38,7 +38,7 @@
 
 - (void) mediaPicker: (MPMediaPickerController *) mediaPicker didPickMediaItems: (MPMediaItemCollection *) mediaItemCollection {
     [self.navigationController dismissViewControllerAnimated:YES completion:^{}];
-    NNPadViewController *padViewController = [[NNPadViewController alloc] initWithSongChoice:mediaItemCollection];
+    NNPadViewController *padViewController = [[NNPadViewController alloc] initWithSongChoice:mediaItemCollection.items[0]];
     [self.navigationController pushViewController:padViewController animated:YES];
 }
 

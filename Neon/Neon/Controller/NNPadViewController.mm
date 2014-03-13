@@ -8,28 +8,26 @@
 
 #import "NNPadViewController.h"
 
+#import "NNSoundEngine.h"
+#import "NNSound.h"
+
 #import "NNPadControl.h"
 
 @interface NNPadViewController ()
+
+@property NNSoundEngine *soundEngine;
 
 @end
 
 @implementation NNPadViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        
-    }
-    return self;
-}
-
-- (id)initWithSongChoice:(MPMediaItemCollection *) mediaItemCollection
+- (id)initWithSongChoice:(MPMediaItem *)mediaItem
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
         
+        // TODO: this automatically plays, so it's useless
+        NNSoundEngine *soundEngine = [[NNSoundEngine alloc] initWithMediaItem:mediaItem];
     }
     return self;
 }

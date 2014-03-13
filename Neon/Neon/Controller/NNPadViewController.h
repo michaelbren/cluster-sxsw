@@ -10,5 +10,7 @@
 #import "NNMediaPickerViewController.h"
 
 @interface NNPadViewController : UIViewController
-- (id)initWithSongChoice:(MPMediaItemCollection *) mediaItemCollection;
+
+- (id)initWithSongChoice:(MPMediaItem *)item;
+
 @end

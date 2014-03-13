@@ -7,6 +7,8 @@
 //
 
 #import "NNUtility.h"
+#import <AVFoundation/AVFoundation.h>
+#import <CoreMedia/CoreMedia.h>
 
 float randomFloat(float min, float max) {
     float diff = max - min;

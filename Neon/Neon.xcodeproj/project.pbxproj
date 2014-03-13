@@ -10,6 +10,11 @@
 		A91885CB18D1EA8F00D2C4FE /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91885CA18D1EA8F00D2C4FE /* Accelerate.framework */; };
 		A91885CD18D1EA9D00D2C4FE /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91885CC18D1EA9D00D2C4FE /* CoreAudio.framework */; };
 		A91885CF18D1EAA600D2C4FE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91885CE18D1EAA600D2C4FE /* AudioToolbox.framework */; };
+		A91885D318D1EBCE00D2C4FE /* NNSound.mm in Sources */ = {isa = PBXBuildFile; fileRef = A91885D218D1EBCE00D2C4FE /* NNSound.mm */; };
+		A91885D618D1EBF000D2C4FE /* NNSoundEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = A91885D518D1EBF000D2C4FE /* NNSoundEngine.mm */; };
+		A91885D818D1F00B00D2C4FE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91885D718D1F00B00D2C4FE /* AVFoundation.framework */; };
+		A91885DA18D1F01100D2C4FE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91885D918D1F01100D2C4FE /* CoreMedia.framework */; };
+		A91885DC18D1FE0100D2C4FE /* bird_machine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A91885DB18D1FE0100D2C4FE /* bird_machine.mp3 */; };
 		A98B977018D1650C00D3BE55 /* NNPadControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A98B976F18D1650C00D3BE55 /* NNPadControl.m */; };
 		A98B977418D17EC900D3BE55 /* NNUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A98B977318D17EC900D3BE55 /* NNUtility.m */; };
 		A98B977E18D1E98800D3BE55 /* AudioFileReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = A98B977718D1E98800D3BE55 /* AudioFileReader.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -24,7 +29,7 @@
 		A9B36E1118D15442009004FB /* NNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B36E1018D15442009004FB /* NNAppDelegate.m */; };
 		A9B36E1318D15442009004FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9B36E1218D15442009004FB /* Images.xcassets */; };
 		E171DE1E18D163730093F127 /* NNMediaPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E171DE1D18D163730093F127 /* NNMediaPickerViewController.m */; };
-		E171DE2218D163960093F127 /* NNPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E171DE2118D163960093F127 /* NNPadViewController.m */; };
+		E171DE2218D163960093F127 /* NNPadViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = E171DE2118D163960093F127 /* NNPadViewController.mm */; };
 		E171DE2418D170690093F127 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E171DE2318D170690093F127 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +37,13 @@
 		A91885CA18D1EA8F00D2C4FE /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		A91885CC18D1EA9D00D2C4FE /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		A91885CE18D1EAA600D2C4FE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A91885D118D1EBCE00D2C4FE /* NNSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NNSound.h; path = Model/NNSound.h; sourceTree = "<group>"; };
+		A91885D218D1EBCE00D2C4FE /* NNSound.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NNSound.mm; path = Model/NNSound.mm; sourceTree = "<group>"; };
+		A91885D418D1EBF000D2C4FE /* NNSoundEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NNSoundEngine.h; path = Model/NNSoundEngine.h; sourceTree = "<group>"; };
+		A91885D518D1EBF000D2C4FE /* NNSoundEngine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NNSoundEngine.mm; path = Model/NNSoundEngine.mm; sourceTree = "<group>"; };
+		A91885D718D1F00B00D2C4FE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A91885D918D1F01100D2C4FE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		A91885DB18D1FE0100D2C4FE /* bird_machine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bird_machine.mp3; sourceTree = "<group>"; };
 		A98B976E18D1650C00D3BE55 /* NNPadControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NNPadControl.h; path = View/NNPadControl.h; sourceTree = "<group>"; };
 		A98B976F18D1650C00D3BE55 /* NNPadControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NNPadControl.m; path = View/NNPadControl.m; sourceTree = "<group>"; };
 		A98B977218D17EC900D3BE55 /* NNUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNUtility.h; sourceTree = "<group>"; };
@@ -59,7 +71,7 @@
 		E171DE1C18D163730093F127 /* NNMediaPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NNMediaPickerViewController.h; path = Controller/NNMediaPickerViewController.h; sourceTree = "<group>"; };
 		E171DE1D18D163730093F127 /* NNMediaPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NNMediaPickerViewController.m; path = Controller/NNMediaPickerViewController.m; sourceTree = "<group>"; };
 		E171DE2018D163960093F127 /* NNPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NNPadViewController.h; path = Controller/NNPadViewController.h; sourceTree = "<group>"; };
-		E171DE2118D163960093F127 /* NNPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NNPadViewController.m; path = Controller/NNPadViewController.m; sourceTree = "<group>"; };
+		E171DE2118D163960093F127 /* NNPadViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NNPadViewController.mm; path = Controller/NNPadViewController.mm; sourceTree = "<group>"; };
 		E171DE2318D170690093F127 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -68,6 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A91885DA18D1F01100D2C4FE /* CoreMedia.framework in Frameworks */,
+				A91885D818D1F00B00D2C4FE /* AVFoundation.framework in Frameworks */,
 				A91885CF18D1EAA600D2C4FE /* AudioToolbox.framework in Frameworks */,
 				A91885CD18D1EA9D00D2C4FE /* CoreAudio.framework in Frameworks */,
 				A91885CB18D1EA8F00D2C4FE /* Accelerate.framework in Frameworks */,
@@ -81,6 +95,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A91885D018D1EB9A00D2C4FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A91885D118D1EBCE00D2C4FE /* NNSound.h */,
+				A91885D218D1EBCE00D2C4FE /* NNSound.mm */,
+				A91885D418D1EBF000D2C4FE /* NNSoundEngine.h */,
+				A91885D518D1EBF000D2C4FE /* NNSoundEngine.mm */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		A98B976D18D164D500D3BE55 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +159,8 @@
 		A9B36DFF18D15441009004FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A91885D918D1F01100D2C4FE /* CoreMedia.framework */,
+				A91885D718D1F00B00D2C4FE /* AVFoundation.framework */,
 				A91885CE18D1EAA600D2C4FE /* AudioToolbox.framework */,
 				A91885CC18D1EA9D00D2C4FE /* CoreAudio.framework */,
 				A91885CA18D1EA8F00D2C4FE /* Accelerate.framework */,
@@ -152,8 +179,10 @@
 				A9B36E2F18D154AF009004FB /* App Delegate */,
 				E171DE1F18D1637D0093F127 /* Controller */,
 				A98B976D18D164D500D3BE55 /* View */,
+				A91885D018D1EB9A00D2C4FE /* Model */,
 				A98B977118D17EAF00D3BE55 /* Utility */,
 				A98B977518D1E98800D3BE55 /* Novocaine */,
+				A91885DB18D1FE0100D2C4FE /* bird_machine.mp3 */,
 				A9B36E1218D15442009004FB /* Images.xcassets */,
 				A9B36E0718D15441009004FB /* Supporting Files */,
 			);
@@ -186,7 +215,7 @@
 				E171DE1C18D163730093F127 /* NNMediaPickerViewController.h */,
 				E171DE1D18D163730093F127 /* NNMediaPickerViewController.m */,
 				E171DE2018D163960093F127 /* NNPadViewController.h */,
-				E171DE2118D163960093F127 /* NNPadViewController.m */,
+				E171DE2118D163960093F127 /* NNPadViewController.mm */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -247,6 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A91885DC18D1FE0100D2C4FE /* bird_machine.mp3 in Resources */,
 				A9B36E0B18D15441009004FB /* InfoPlist.strings in Resources */,
 				A9B36E1318D15442009004FB /* Images.xcassets in Resources */,
 			);
@@ -260,9 +290,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A98B977418D17EC900D3BE55 /* NNUtility.m in Sources */,
-				E171DE2218D163960093F127 /* NNPadViewController.m in Sources */,
+				A91885D318D1EBCE00D2C4FE /* NNSound.mm in Sources */,
+				E171DE2218D163960093F127 /* NNPadViewController.mm in Sources */,
 				A98B977018D1650C00D3BE55 /* NNPadControl.m in Sources */,
 				A98B977F18D1E98800D3BE55 /* AudioFileWriter.m in Sources */,
+				A91885D618D1EBF000D2C4FE /* NNSoundEngine.mm in Sources */,
 				E171DE1E18D163730093F127 /* NNMediaPickerViewController.m in Sources */,
 				A98B978118D1E98800D3BE55 /* RingBuffer.mm in Sources */,
 				A9B36E1118D15442009004FB /* NNAppDelegate.m in Sources */,
