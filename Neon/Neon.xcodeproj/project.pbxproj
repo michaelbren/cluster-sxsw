@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A91885CB18D1EA8F00D2C4FE /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91885CA18D1EA8F00D2C4FE /* Accelerate.framework */; };
+		A91885CD18D1EA9D00D2C4FE /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91885CC18D1EA9D00D2C4FE /* CoreAudio.framework */; };
+		A91885CF18D1EAA600D2C4FE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91885CE18D1EAA600D2C4FE /* AudioToolbox.framework */; };
 		A98B977018D1650C00D3BE55 /* NNPadControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A98B976F18D1650C00D3BE55 /* NNPadControl.m */; };
 		A98B977418D17EC900D3BE55 /* NNUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A98B977318D17EC900D3BE55 /* NNUtility.m */; };
+		A98B977E18D1E98800D3BE55 /* AudioFileReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = A98B977718D1E98800D3BE55 /* AudioFileReader.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A98B977F18D1E98800D3BE55 /* AudioFileWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = A98B977918D1E98800D3BE55 /* AudioFileWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A98B978018D1E98800D3BE55 /* Novocaine.m in Sources */ = {isa = PBXBuildFile; fileRef = A98B977B18D1E98800D3BE55 /* Novocaine.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A98B978118D1E98800D3BE55 /* RingBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = A98B977D18D1E98800D3BE55 /* RingBuffer.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A9B36E0118D15441009004FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B36E0018D15441009004FB /* Foundation.framework */; };
 		A9B36E0318D15441009004FB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B36E0218D15441009004FB /* CoreGraphics.framework */; };
 		A9B36E0518D15441009004FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B36E0418D15441009004FB /* UIKit.framework */; };
@@ -22,10 +29,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A91885CA18D1EA8F00D2C4FE /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		A91885CC18D1EA9D00D2C4FE /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		A91885CE18D1EAA600D2C4FE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A98B976E18D1650C00D3BE55 /* NNPadControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NNPadControl.h; path = View/NNPadControl.h; sourceTree = "<group>"; };
 		A98B976F18D1650C00D3BE55 /* NNPadControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NNPadControl.m; path = View/NNPadControl.m; sourceTree = "<group>"; };
 		A98B977218D17EC900D3BE55 /* NNUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNUtility.h; sourceTree = "<group>"; };
 		A98B977318D17EC900D3BE55 /* NNUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNUtility.m; sourceTree = "<group>"; };
+		A98B977618D1E98800D3BE55 /* AudioFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileReader.h; sourceTree = "<group>"; };
+		A98B977718D1E98800D3BE55 /* AudioFileReader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioFileReader.mm; sourceTree = "<group>"; };
+		A98B977818D1E98800D3BE55 /* AudioFileWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileWriter.h; sourceTree = "<group>"; };
+		A98B977918D1E98800D3BE55 /* AudioFileWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioFileWriter.m; sourceTree = "<group>"; };
+		A98B977A18D1E98800D3BE55 /* Novocaine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Novocaine.h; sourceTree = "<group>"; };
+		A98B977B18D1E98800D3BE55 /* Novocaine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Novocaine.m; sourceTree = "<group>"; };
+		A98B977C18D1E98800D3BE55 /* RingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RingBuffer.h; sourceTree = "<group>"; };
+		A98B977D18D1E98800D3BE55 /* RingBuffer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RingBuffer.mm; sourceTree = "<group>"; };
 		A9B36DFD18D15441009004FB /* Neon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9B36E0018D15441009004FB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A9B36E0218D15441009004FB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -50,6 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A91885CF18D1EAA600D2C4FE /* AudioToolbox.framework in Frameworks */,
+				A91885CD18D1EA9D00D2C4FE /* CoreAudio.framework in Frameworks */,
+				A91885CB18D1EA8F00D2C4FE /* Accelerate.framework in Frameworks */,
 				E171DE2418D170690093F127 /* MediaPlayer.framework in Frameworks */,
 				A9B36E0318D15441009004FB /* CoreGraphics.framework in Frameworks */,
 				A9B36E0518D15441009004FB /* UIKit.framework in Frameworks */,
@@ -78,6 +99,21 @@
 			name = Utility;
 			sourceTree = "<group>";
 		};
+		A98B977518D1E98800D3BE55 /* Novocaine */ = {
+			isa = PBXGroup;
+			children = (
+				A98B977618D1E98800D3BE55 /* AudioFileReader.h */,
+				A98B977718D1E98800D3BE55 /* AudioFileReader.mm */,
+				A98B977818D1E98800D3BE55 /* AudioFileWriter.h */,
+				A98B977918D1E98800D3BE55 /* AudioFileWriter.m */,
+				A98B977A18D1E98800D3BE55 /* Novocaine.h */,
+				A98B977B18D1E98800D3BE55 /* Novocaine.m */,
+				A98B977C18D1E98800D3BE55 /* RingBuffer.h */,
+				A98B977D18D1E98800D3BE55 /* RingBuffer.mm */,
+			);
+			path = Novocaine;
+			sourceTree = "<group>";
+		};
 		A9B36DF418D15441009004FB = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +134,9 @@
 		A9B36DFF18D15441009004FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A91885CE18D1EAA600D2C4FE /* AudioToolbox.framework */,
+				A91885CC18D1EA9D00D2C4FE /* CoreAudio.framework */,
+				A91885CA18D1EA8F00D2C4FE /* Accelerate.framework */,
 				E171DE2318D170690093F127 /* MediaPlayer.framework */,
 				A9B36E0018D15441009004FB /* Foundation.framework */,
 				A9B36E0218D15441009004FB /* CoreGraphics.framework */,
@@ -114,6 +153,7 @@
 				E171DE1F18D1637D0093F127 /* Controller */,
 				A98B976D18D164D500D3BE55 /* View */,
 				A98B977118D17EAF00D3BE55 /* Utility */,
+				A98B977518D1E98800D3BE55 /* Novocaine */,
 				A9B36E1218D15442009004FB /* Images.xcassets */,
 				A9B36E0718D15441009004FB /* Supporting Files */,
 			);
@@ -222,9 +262,13 @@
 				A98B977418D17EC900D3BE55 /* NNUtility.m in Sources */,
 				E171DE2218D163960093F127 /* NNPadViewController.m in Sources */,
 				A98B977018D1650C00D3BE55 /* NNPadControl.m in Sources */,
+				A98B977F18D1E98800D3BE55 /* AudioFileWriter.m in Sources */,
 				E171DE1E18D163730093F127 /* NNMediaPickerViewController.m in Sources */,
+				A98B978118D1E98800D3BE55 /* RingBuffer.mm in Sources */,
 				A9B36E1118D15442009004FB /* NNAppDelegate.m in Sources */,
+				A98B977E18D1E98800D3BE55 /* AudioFileReader.mm in Sources */,
 				A9B36E0D18D15442009004FB /* main.m in Sources */,
+				A98B978018D1E98800D3BE55 /* Novocaine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
