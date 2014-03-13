@@ -27,9 +27,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    MPMediaPickerController *mediaPicker = [MPMediaPickerController new];
+    MPMediaPickerController *mediaPicker = [[MPMediaPickerController alloc] initWithMediaTypes:MPMediaTypeAnyAudio];
     mediaPicker.delegate = self;
+    mediaPicker.prompt = NSLocalizedString (@"Add songs to play", "Prompt in media item picker");
     [self presentViewController:mediaPicker animated:YES completion:^{}];
+}
+
+- (void) mediaPicker: (MPMediaPickerController *) mediaPicker didPickMediaItems: (MPMediaItemCollection *) mediaItemCollection {
+    [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 - (void)didReceiveMemoryWarning

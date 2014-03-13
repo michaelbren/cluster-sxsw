@@ -8,13 +8,14 @@
 
 #import "NNAppDelegate.h"
 #import "NNPadViewController.h"
+#import "NNMediaPickerViewController.h"
 
 @implementation NNAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[NNPadViewController alloc] init];
+    self.window.rootViewController = [[NNMediaPickerViewController alloc] init];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
