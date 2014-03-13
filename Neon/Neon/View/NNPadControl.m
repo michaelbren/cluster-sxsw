@@ -67,12 +67,23 @@
 
 - (void)setIsTapped
 {
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform"];
+    animation.fromValue = [NSValue valueWithCATransform3D:self.padTop.transform];
     self.padTop.transform = CATransform3DMakeTranslation(0, 3, 0);
+    animation.toValue = [NSValue valueWithCATransform3D:self.padTop.transform];
+    animation.duration = .02;
+    [self.padTop addAnimation:animation forKey:@"transform"];
 }
 
 - (void)setIsUntapped
 {
+    
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform"];
+    animation.fromValue = [NSValue valueWithCATransform3D:self.padTop.transform];
     self.padTop.transform = CATransform3DIdentity;
+    animation.toValue = [NSValue valueWithCATransform3D:self.padTop.transform];
+    animation.duration = .12;
+    [self.padTop addAnimation:animation forKey:@"transform"];
 }
 
 #pragma mark Touch Events
