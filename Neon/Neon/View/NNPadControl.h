@@ -13,6 +13,6 @@
 @interface NNPadControl : UIControl
 
 + (CGSize)padSizeForPadCount:(NSInteger)padCount;
-+ (CGPoint)padCenterForPosition:(NSInteger)position padCount:(NSInteger)padCount;
++ (CGPoint)padOriginForPosition:(NSInteger)position padCount:(NSInteger)padCount;
 
 @end

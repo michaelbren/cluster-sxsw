@@ -15,9 +15,19 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [NNPadControl randomColor];
+        
+        self.backgroundColor = randomColor();
+        
+//        ((CAShapeLayer *)self.layer).path = [UIBezierPath bezierPathWithRect:frame].CGPath;
+//        ((CAShapeLayer *)self.layer).strokeColor = [UIColor whiteColor].CGColor;
+//        ((CAShapeLayer *)self.layer).lineWidth = 14;
     }
     return self;
+}
+
++ (Class)layerClass
+{
+    return [CAShapeLayer class];
 }
 
 #pragma mark Layout
@@ -28,23 +38,13 @@
                       CGRectGetHeight([UIScreen mainScreen].applicationFrame) / (padCount / kColumnCount));
 }
 
-+ (CGPoint)padCenterForPosition:(NSInteger)position padCount:(NSInteger)padCount
++ (CGPoint)padOriginForPosition:(NSInteger)position padCount:(NSInteger)padCount
 {
     CGSize size = [NNPadControl padSizeForPadCount:padCount];
     NSInteger i = position % kColumnCount;
     NSInteger j = position / kColumnCount;
     return CGPointMake(size.width * i,
                        size.height * j);
-}
-
-+ (float)randomFloatBetween:(float)smallNumber and:(float)bigNumber {
-    float diff = bigNumber - smallNumber;
-    return (((float) (arc4random() % ((unsigned)RAND_MAX + 1)) / RAND_MAX) * diff) + smallNumber;
-}
-
-+ (UIColor *)randomColor
-{
-    return [UIColor colorWithHue:randomFloat(0, 1) saturation:1 brightness:0.95 alpha:1];
 }
 
 @end
