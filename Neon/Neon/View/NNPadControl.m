@@ -82,7 +82,7 @@
     animation.fromValue = [NSValue valueWithCATransform3D:self.padTop.transform];
     self.padTop.transform = CATransform3DMakeTranslation(0, 3, 0);
     animation.toValue = [NSValue valueWithCATransform3D:self.padTop.transform];
-    animation.duration = .02;
+    animation.duration = 0;
     [self.padTop addAnimation:animation forKey:@"transform"];
 }
 
@@ -93,7 +93,7 @@
     animation.fromValue = [NSValue valueWithCATransform3D:self.padTop.transform];
     self.padTop.transform = CATransform3DIdentity;
     animation.toValue = [NSValue valueWithCATransform3D:self.padTop.transform];
-    animation.duration = .12;
+    animation.duration = 0;
     [self.padTop addAnimation:animation forKey:@"transform"];
 }
 

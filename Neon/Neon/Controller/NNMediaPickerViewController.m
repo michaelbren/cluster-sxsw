@@ -7,6 +7,7 @@
 //
 
 #import "NNMediaPickerViewController.h"
+#import "NNPadViewController.h"
 
 @interface NNMediaPickerViewController ()
 
@@ -18,7 +19,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -26,6 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:YES];
+    [self.navigationController setToolbarHidden:YES];
+    
     // Do any additional setup after loading the view.
     MPMediaPickerController *mediaPicker = [[MPMediaPickerController alloc] initWithMediaTypes:MPMediaTypeAnyAudio];
     mediaPicker.delegate = self;
@@ -34,7 +37,9 @@
 }
 
 - (void) mediaPicker: (MPMediaPickerController *) mediaPicker didPickMediaItems: (MPMediaItemCollection *) mediaItemCollection {
-    [self dismissViewControllerAnimated:YES completion:^{}];
+    [self.navigationController dismissViewControllerAnimated:YES completion:^{}];
+    NNPadViewController *padViewController = [[NNPadViewController alloc] initWithSongChoice:mediaItemCollection];
+    [self.navigationController pushViewController:padViewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

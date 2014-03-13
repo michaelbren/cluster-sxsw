@@ -17,8 +17,10 @@
     [UIApplication sharedApplication].statusBarHidden = YES;
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    self.window.rootViewController = [[NNMediaPickerViewController alloc] init];
-    self.window.rootViewController = [[NNPadViewController alloc] init];
+    UINavigationController *navController = [[UINavigationController alloc] init];
+    NNMediaPickerViewController *mediaPicker = [[NNMediaPickerViewController alloc] init];
+    [navController pushViewController:mediaPicker animated:YES];
+    self.window.rootViewController = navController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

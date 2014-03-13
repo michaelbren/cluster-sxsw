@@ -20,13 +20,24 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        
     }
     return self;
+}
+
+- (id)initWithSongChoice:(MPMediaItemCollection *) mediaItemCollection
+{
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:YES];
+    [self.navigationController setToolbarHidden:YES];
+    
+    NNMediaPickerViewController *michaelsFuckingTired = [[NNMediaPickerViewController alloc] init];
+    [self presentViewController:michaelsFuckingTired animated:YES completion:^{}];
     
     self.view.backgroundColor = [UIColor colorWithRed:.88 green:.88 blue:.88 alpha:1];
     
