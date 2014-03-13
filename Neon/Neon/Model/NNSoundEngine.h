@@ -9,11 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 
-@class NNSound;
-
 @interface NNSoundEngine : NSObject
-
-@property NNSound *sound;
 
 - (instancetype)initWithMediaItem:(MPMediaItem *)item;
 

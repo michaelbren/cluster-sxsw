@@ -13,7 +13,7 @@
 
 @property CGFloat tempo;
 @property CGFloat sperbeat;
-@property NSMutableDictionary *loops;
+@property NSMutableArray *loops;
 
 @property NSMutableArray *queue, *loopingQueue;
 @property NSMutableSet *playing, *looping;
@@ -26,26 +26,20 @@
 {
     self = [super init];
     if (self) {
-        
-        self.tempo = 120;
-        self.sperbeat = 1.0 / self.tempo * 60;
-        
-        self.loops = [[NSMutableDictionary alloc] init];
-        self.playing = [[NSMutableSet alloc] init];
-        self.looping = [[NSMutableSet alloc] init];
-        
-        // Load loops
+        self.loops = [[NSMutableArray alloc] init];
         for (NSInteger i = 0; i < 8; i++) {
+            NSURL *url = [[NSBundle mainBundle] URLForResource:[NSString stringWithFormat:@"%ld", (long)i] withExtension:@"wav"];
+            
+            NNSound *sound = [[NNSound alloc] initWithURL:url];
+            [self.loops addObject:sound];
         }
-        
-        self.sound = [[NNSound alloc] initWithMediaItem:item];
     }
     return self;
 }
 
 - (void)start
 {
-    [self processQueue];
+//    [self processQueue];
 }
 
 - (void)enqueuePalette:(NSInteger)palette looping:(BOOL)looping
@@ -60,7 +54,7 @@
     // TODO: First, loop any looping loops again
     // TODO: Then, play/loop new loops
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.sperbeat * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.sperbeat * .5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self processQueue];
     });
 }

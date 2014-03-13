@@ -37,9 +37,6 @@
     [self.navigationController setNavigationBarHidden:YES];
     [self.navigationController setToolbarHidden:YES];
     
-    NNMediaPickerViewController *michaelsFuckingTired = [[NNMediaPickerViewController alloc] init];
-    [self presentViewController:michaelsFuckingTired animated:YES completion:^{}];
-    
     self.view.backgroundColor = [UIColor colorWithRed:.88 green:.88 blue:.88 alpha:1];
     
     for (NSInteger i = 0; i < kPadCount; i++) {
@@ -58,7 +55,7 @@
 
 - (void)padControlWasDoubleTapped:(NNPadControl *)padControl
 {
-    [self.soundEngine enqueuePalette:padControl.padPosition looping:YES];
+//    [self.soundEngine enqueuePalette:padControl.padPosition looping:YES];
 }
 
 @end

@@ -44,10 +44,10 @@
         tap.numberOfTapsRequired = 1;
         [self addGestureRecognizer:tap];
 
-        UILongPressGestureRecognizer *doubleTap = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
-        doubleTap.numberOfTapsRequired = 1;
-        doubleTap.minimumPressDuration = 0;
-        [self addGestureRecognizer:doubleTap];
+//        UILongPressGestureRecognizer *doubleTap = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
+//        doubleTap.numberOfTapsRequired = 1;
+//        doubleTap.minimumPressDuration = 0;
+//        [self addGestureRecognizer:doubleTap];
         
         //Maybe later
         /*UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];

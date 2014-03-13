@@ -20,7 +20,7 @@
 
 @property NSArray *segments;
 
-- (instancetype)initWithMediaItem:(MPMediaItem *)item;
+- (instancetype)initWithURL:(NSURL *)url;
 - (void)loadSegments:(NSArray *)segments;
 
 - (void)play;
