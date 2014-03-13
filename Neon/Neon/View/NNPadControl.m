@@ -37,6 +37,19 @@
         self.padTop.path = [UIBezierPath bezierPathWithRoundedRect:CGRectOffset(self.bounds, 0, -6) cornerRadius:cornderRadius].CGPath;
         self.padTop.fillColor = [UIColor colorWithHue:self.hue saturation:1 brightness:1 alpha:1].CGColor;
         [self.layer addSublayer:self.padTop];
+        
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];
+        tap.numberOfTapsRequired = 1;
+        [self addGestureRecognizer:tap];
+        
+        UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
+        doubleTap.numberOfTapsRequired = 2;
+        [self addGestureRecognizer:doubleTap];
+        
+        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
+        [self addGestureRecognizer:longPress];
+
     }
     return self;
 }
@@ -62,8 +75,6 @@
     return CGPointMake(size.width * i + kPadPadding,
                        size.height * j + kPadPadding);
 }
-
-#pragma mark Glow
 
 - (void)setIsTapped
 {
@@ -93,14 +104,26 @@
     [self setIsTapped];
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)singleTap:(UITapGestureRecognizer *)gesture
 {
+    // TODO: make that shit play
     [self setIsUntapped];
 }
 
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)doubleTap:(UITapGestureRecognizer *)gesture
 {
+    // TODO: make that shit loop
     [self setIsUntapped];
+}
+
+- (void)longPress:(UILongPressGestureRecognizer *)gesture
+{
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        // TODO: recording zoom
+        
+    } else if (gesture.state == UIGestureRecognizerStateEnded) {
+        [self setIsUntapped];
+    }
 }
 
 @end
