@@ -30,15 +30,12 @@
     
     self.view.backgroundColor = [UIColor colorWithRed:.88 green:.88 blue:.88 alpha:1];
     
-    NSInteger padCount = 12;
-    
-    for (NSInteger i = 0; i < 12; i++) {
-        NNPadControl *control = [[NNPadControl alloc] initWithFrame:({
-            CGRect frame = CGRectZero;
-            frame.origin = [NNPadControl padOriginForPosition:i padCount:padCount];
-            frame.size = [NNPadControl padSizeForPadCount:padCount];
-            frame;
-        })];
+    for (NSInteger i = 0; i < kPadCount; i++) {
+        NNPadControl *control = [[NNPadControl alloc] initWithPosition:i color:NNPinkColor];
+        
+        if (i % 3 == 0) {
+            control.isPlaying = NO;
+        }
         
         [self.view addSubview:control];
     }
