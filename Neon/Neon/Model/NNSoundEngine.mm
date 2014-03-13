@@ -44,7 +44,8 @@
 
 - (void)enqueuePalette:(NSInteger)palette looping:(BOOL)looping
 {
-    // TODO: If looping is YES, always enqueue
+    [(NNSound *)self.loops[palette] play];
+        // TODO: If looping is YES, always enqueue
     // TODO: Else, stop the palette if it is currently playing/looping
     // TODO: Else, enqueue the palette
 }

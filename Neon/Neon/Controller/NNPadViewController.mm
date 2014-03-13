@@ -41,7 +41,7 @@
     
     for (NSInteger i = 0; i < kPadCount; i++) {
         NNPadControl *control = [[NNPadControl alloc] initWithPosition:i color:(NNColor)i];
-        
+        control.delegate = self;
         [self.view addSubview:control];
     }
 }
