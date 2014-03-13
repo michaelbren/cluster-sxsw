@@ -30,6 +30,9 @@ typedef NS_ENUM(NSInteger, NNColor) {
 
 @protocol NNPadControlDelegate <NSObject>
 
+- (void)padControlWasTapped:(NNPadControl *)padControl;
+- (void)padControlWasDoubleTapped:(NNPadControl *)padControl;
+
 - (void)padControlWasHeld:(NNPadControl *)padControl;
 - (void)padControlWasReleased:(NNPadControl *)padControl;
 
@@ -39,6 +42,8 @@ typedef NS_ENUM(NSInteger, NNColor) {
 
 @property id<NNPadControlDelegate> delegate;
 @property (nonatomic) BOOL isPlaying;
+@property NSInteger padPosition;
+
 
 - (instancetype)initWithPosition:(NSInteger)position color:(NNColor)color;
 

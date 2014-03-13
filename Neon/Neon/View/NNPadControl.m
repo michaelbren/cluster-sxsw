@@ -37,19 +37,22 @@
         [self.layer addSublayer:self.padTop];
         
         [self setPadColor:color];
+        self.padPosition = position;
         
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];
         tap.numberOfTapsRequired = 1;
         [self addGestureRecognizer:tap];
 
-        UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
-        doubleTap.numberOfTapsRequired = 2;
+        UILongPressGestureRecognizer *doubleTap = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
+        doubleTap.numberOfTapsRequired = 1;
+        doubleTap.minimumPressDuration = 0;
         [self addGestureRecognizer:doubleTap];
         
-        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
+        //Maybe later
+        /*UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
         longPress.minimumPressDuration = 0.25;
-        [self addGestureRecognizer:longPress];
+        [self addGestureRecognizer:longPress];*/
     }
     return self;
 }
@@ -203,13 +206,15 @@
 {
     // TODO: make that shit play
     [self setIsUntapped];
+    [self.delegate padControlWasTapped:self];
 }
 
-- (void)doubleTap:(UITapGestureRecognizer *)gesture
+- (void)doubleTap:(UILongPressGestureRecognizer *)gesture
 {
     if (gesture.state == UIGestureRecognizerStateBegan) {
         // TODO: make that shit loop
         [self setIsTapped];
+        [self.delegate padControlWasDoubleTapped:self];
         
     } else if (gesture.state == UIGestureRecognizerStateEnded) {
         [self setIsUntapped];

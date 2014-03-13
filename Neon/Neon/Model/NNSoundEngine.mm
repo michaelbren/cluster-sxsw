@@ -25,13 +25,14 @@
     self = [super init];
     if (self) {
         self.sound = [[NNSound alloc] initWithMediaItem:item];
-        [self.sound play];
+        //[self.sound play];
     }
     return self;
 }
 
-- (void)enqueueSlice:(NSInteger)slice looping:(BOOL)looping
+- (void)enqueuePalette:(NSInteger)palette looping:(BOOL)looping
 {
+    
 }
 
 - (void)processQueue

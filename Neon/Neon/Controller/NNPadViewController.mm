@@ -25,9 +25,7 @@
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
-        
-        // TODO: this automatically plays, so it's useless
-        NNSoundEngine *soundEngine = [[NNSoundEngine alloc] initWithMediaItem:mediaItem];
+        self.soundEngine = [[NNSoundEngine alloc] initWithMediaItem:mediaItem];
     }
     return self;
 }
@@ -48,6 +46,18 @@
         
         [self.view addSubview:control];
     }
+}
+
+
+
+- (void)padControlWasTapped:(NNPadControl *)padControl
+{
+    [self.soundEngine enqueuePalette:padControl.padPosition looping:NO];
+}
+
+- (void)padControlWasDoubleTapped:(NNPadControl *)padControl
+{
+    [self.soundEngine enqueuePalette:padControl.padPosition looping:YES];
 }
 
 @end
