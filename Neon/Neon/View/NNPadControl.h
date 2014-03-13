@@ -8,12 +8,37 @@
 
 #import <UIKit/UIKit.h>
 
-#define kColumnCount 3
+#define kPadCount 8
+#define kColumnCount 2
 #define kPadPadding 10
+#define kCornerRadius 10
+#define kTopPadding 10
+
+typedef NS_ENUM(NSInteger, NNColor) {
+    NNGrayColor,
+    NNPinkColor
+};
+
+@class NNPadControl;
+
+@protocol NNPadControlDelegate <NSObject>
+
+- (void)padControlWasHeld:(NNPadControl *)padControl;
+- (void)padControlWasReleased:(NNPadControl *)padControl;
+
+@end
 
 @interface NNPadControl : UIControl
 
-+ (CGSize)padSizeForPadCount:(NSInteger)padCount;
-+ (CGPoint)padOriginForPosition:(NSInteger)position padCount:(NSInteger)padCount;
+@property id<NNPadControlDelegate> delegate;
+@property (nonatomic) BOOL isPlaying;
+
+- (instancetype)initWithPosition:(NSInteger)position color:(NNColor)color;
+
++ (CGSize)padSize;
++ (CGPoint)padOriginForPosition:(NSInteger)position;
+
+- (void)animateToRecording;
+- (void)animateFromRecording;
 
 @end
