@@ -9,7 +9,4 @@
 #import <Foundation/Foundation.h>
 
 float randomFloat(float min, float max);
-
-@interface NNUtility : NSObject
-
-@end
+UIColor *randomColor();

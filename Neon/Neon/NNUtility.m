@@ -12,3 +12,7 @@ float randomFloat(float min, float max) {
     float diff = max - min;
     return (((float) (arc4random() % ((unsigned)RAND_MAX + 1)) / RAND_MAX) * diff) + min;
 }
+
+UIColor *randomColor() {
+    return [UIColor colorWithHue:randomFloat(0, 1) saturation:1 brightness:1 alpha:1];
+}

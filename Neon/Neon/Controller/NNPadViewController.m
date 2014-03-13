@@ -33,7 +33,7 @@
     for (NSInteger i = 0; i < 12; i++) {
         NNPadControl *control = [[NNPadControl alloc] initWithFrame:({
             CGRect frame = CGRectZero;
-            frame.origin = [NNPadControl padCenterForPosition:i padCount:padCount];
+            frame.origin = [NNPadControl padOriginForPosition:i padCount:padCount];
             frame.size = [NNPadControl padSizeForPadCount:padCount];
             frame;
         })];
