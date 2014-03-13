@@ -17,9 +17,11 @@
 @property Novocaine *audioManager;
 @property AudioFileReader *audioReader;
 @property NSInteger tempo;
-@property NSDictionary *slices;
+
+@property NSArray *segments;
 
 - (instancetype)initWithMediaItem:(MPMediaItem *)item;
+- (void)loadSegments:(NSArray *)segments;
 
 - (void)play;
 

@@ -17,6 +17,8 @@
 
 - (instancetype)initWithMediaItem:(MPMediaItem *)item;
 
+- (void)start;
+
 - (void)enqueuePalette:(NSInteger)palette looping:(BOOL)looping;
 - (void)processQueue;
 

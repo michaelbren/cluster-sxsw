@@ -28,6 +28,11 @@
     return self;
 }
 
+- (void)loadSegments:(NSArray *)segments
+{
+    
+}
+
 - (void)play
 {
     __block NNSound *wkSelf = self;

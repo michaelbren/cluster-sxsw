@@ -26,6 +26,7 @@
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
         self.soundEngine = [[NNSoundEngine alloc] initWithMediaItem:mediaItem];
+        [self.soundEngine start];
     }
     return self;
 }
