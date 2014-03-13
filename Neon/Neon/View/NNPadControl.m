@@ -11,6 +11,8 @@
 
 @interface NNPadControl ()
 
+@property CGFloat hue;
+
 @end
 
 @implementation NNPadControl
@@ -24,13 +26,14 @@
     
     if (self) {
     
-        CGFloat hue = randomFloat(0, 1);
+        self.hue = randomFloat(0, 1);
         
         ((CAShapeLayer *)self.layer).path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:8].CGPath;
-        ((CAShapeLayer *)self.layer).fillColor = [UIColor colorWithHue:hue saturation:1 brightness:0.95 alpha:1].CGColor;
+        ((CAShapeLayer *)self.layer).fillColor = [UIColor colorWithHue:self.hue saturation:1 brightness:0.95 alpha:1].CGColor;
         
-        self.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:CGRectInset(self.bounds, -4, -4) cornerRadius:16].CGPath;
-        self.layer.shadowOpacity = .2;
+        self.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:CGRectInset(self.bounds, 4, 4) cornerRadius:16].CGPath;
+        self.layer.shadowOpacity = .1;
+        self.layer.shadowRadius = 16;
         self.layer.shadowColor = ((CAShapeLayer *)self.layer).fillColor;
     }
     return self;
@@ -45,8 +48,8 @@
 
 + (CGSize)padSizeForPadCount:(NSInteger)padCount
 {
-    return CGSizeMake(CGRectGetWidth([UIScreen mainScreen].applicationFrame) / kColumnCount,
-                      CGRectGetHeight([UIScreen mainScreen].applicationFrame) / (padCount / kColumnCount));
+    return CGSizeMake(CGRectGetWidth([UIScreen mainScreen].applicationFrame) / kColumnCount - kPadPadding / 2,
+                      CGRectGetHeight([UIScreen mainScreen].applicationFrame) / (padCount / kColumnCount) - kPadPadding / 2);
 }
 
 + (CGPoint)padOriginForPosition:(NSInteger)position padCount:(NSInteger)padCount
@@ -54,8 +57,34 @@
     CGSize size = [NNPadControl padSizeForPadCount:padCount];
     NSInteger i = position % kColumnCount;
     NSInteger j = position / kColumnCount;
-    return CGPointMake(size.width * i,
-                       size.height * j);
+    return CGPointMake(size.width * i + kPadPadding,
+                       size.height * j + kPadPadding);
+}
+
+#pragma mark Glow
+
+- (void)setGlowLow
+{
+    self.layer.shadowOpacity = .1;
+}
+
+- (void)setGlowHigh
+{
+    self.layer.shadowOpacity = .24;
+}
+
+#pragma mark Touch Events
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    ((CAShapeLayer *)self.layer).fillColor = [UIColor colorWithHue:self.hue saturation:1 brightness:0.4 alpha:1].CGColor;
+    [self setGlowHigh];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    ((CAShapeLayer *)self.layer).fillColor = [UIColor colorWithHue:self.hue saturation:1 brightness:0.95 alpha:1].CGColor;
+    [self setGlowLow];
 }
 
 @end

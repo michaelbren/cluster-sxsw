@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #define kColumnCount 3
+#define kPadPadding 10
 
 @interface NNPadControl : UIControl
 
