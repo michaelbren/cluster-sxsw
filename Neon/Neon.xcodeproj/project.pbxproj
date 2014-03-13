@@ -14,7 +14,6 @@
 		A91885D618D1EBF000D2C4FE /* NNSoundEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = A91885D518D1EBF000D2C4FE /* NNSoundEngine.mm */; };
 		A91885D818D1F00B00D2C4FE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91885D718D1F00B00D2C4FE /* AVFoundation.framework */; };
 		A91885DA18D1F01100D2C4FE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91885D918D1F01100D2C4FE /* CoreMedia.framework */; };
-		A91885DC18D1FE0100D2C4FE /* bird_machine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A91885DB18D1FE0100D2C4FE /* bird_machine.mp3 */; };
 		A98B977018D1650C00D3BE55 /* NNPadControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A98B976F18D1650C00D3BE55 /* NNPadControl.m */; };
 		A98B977418D17EC900D3BE55 /* NNUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A98B977318D17EC900D3BE55 /* NNUtility.m */; };
 		A98B977E18D1E98800D3BE55 /* AudioFileReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = A98B977718D1E98800D3BE55 /* AudioFileReader.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -43,7 +42,6 @@
 		A91885D518D1EBF000D2C4FE /* NNSoundEngine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NNSoundEngine.mm; path = Model/NNSoundEngine.mm; sourceTree = "<group>"; };
 		A91885D718D1F00B00D2C4FE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A91885D918D1F01100D2C4FE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		A91885DB18D1FE0100D2C4FE /* bird_machine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bird_machine.mp3; sourceTree = "<group>"; };
 		A98B976E18D1650C00D3BE55 /* NNPadControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NNPadControl.h; path = View/NNPadControl.h; sourceTree = "<group>"; };
 		A98B976F18D1650C00D3BE55 /* NNPadControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NNPadControl.m; path = View/NNPadControl.m; sourceTree = "<group>"; };
 		A98B977218D17EC900D3BE55 /* NNUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNUtility.h; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 				A91885D018D1EB9A00D2C4FE /* Model */,
 				A98B977118D17EAF00D3BE55 /* Utility */,
 				A98B977518D1E98800D3BE55 /* Novocaine */,
-				A91885DB18D1FE0100D2C4FE /* bird_machine.mp3 */,
 				A9B36E1218D15442009004FB /* Images.xcassets */,
 				A9B36E0718D15441009004FB /* Supporting Files */,
 			);
@@ -276,7 +273,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A91885DC18D1FE0100D2C4FE /* bird_machine.mp3 in Resources */,
 				A9B36E0B18D15441009004FB /* InfoPlist.strings in Resources */,
 				A9B36E1318D15442009004FB /* Images.xcassets in Resources */,
 			);

@@ -81,13 +81,62 @@
 
 - (void)setPadColor:(NNColor)color
 {
+//YELLOW: f1f828
+//YELLOW1: f9fe75
+//ORANGE: ff9600
+//ORANGE1: feab52
+//RED: eb2662
+//RED1: ff598c
+//GREEN: 3deb26
+//GREEN1: 91ff4e
+//PINK: eb26c6
+//PINK1: f995e6
+//GREY: c2bfc0
+//GREY1: cfcfcf
+//BLUE: 26a3eb
+//BLUE1: 5dc3fd
+//PURPLE: a326eb
+//PURPLE1: c461fe
+    
     NSArray *colors;
-    if (color == NNGrayColor) {
-        colors = @[[UIColor colorWithRed:194/255.0 green:191/255.0 blue:192/255.0 alpha:1],
-                   [UIColor colorWithRed:203/255.0 green:201/255.0 blue:202/255.0 alpha:1]];
-    } else {
-        colors = @[[UIColor colorWithRed:238/255.0 green:35/255.0 blue:355/255.0 alpha:1],
-                   [UIColor colorWithRed:247/255.0 green:118/255.0 blue:252/255.0 alpha:1]];
+    
+    switch (color) {
+        case NNYellowColor:
+            colors = @[[UIColor colorWithRed:241/255.0 green:248/255.0 blue:40/255.0 alpha:1],
+                       [UIColor colorWithRed:249/255.0 green:254/255.0 blue:117/255.0 alpha:1]];
+            break;
+        case NNOrangeColor:
+            colors = @[[UIColor colorWithRed:255/255.0 green:150/255.0 blue:0/255.0 alpha:1],
+                       [UIColor colorWithRed:254/255.0 green:171/255.0 blue:82/255.0 alpha:1]];
+            break;
+        case NNRedColor:
+            colors = @[[UIColor colorWithRed:235/255.0 green:28/255.0 blue:98/255.0 alpha:1],
+                       [UIColor colorWithRed:255/255.0 green:89/255.0 blue:140/255.0 alpha:1]];
+            break;
+        case NNGreenColor:
+            colors = @[[UIColor colorWithRed:61/255.0 green:235/255.0 blue:38/255.0 alpha:1],
+                       [UIColor colorWithRed:145/255.0 green:255/255.0 blue:78/255.0 alpha:1]];
+            break;
+        case NNPinkColor:
+            colors = @[[UIColor colorWithRed:238/255.0 green:35/255.0 blue:198/255.0 alpha:1],
+                       [UIColor colorWithRed:249/255.0 green:149/255.0 blue:230/255.0 alpha:1]];
+            break;
+        case NNBlueColor:
+            colors = @[[UIColor colorWithRed:38/255.0 green:163/255.0 blue:235/255.0 alpha:1],
+                       [UIColor colorWithRed:93/255.0 green:193/255.0 blue:253/255.0 alpha:1]];
+            break;
+        case NNDarkBlueColor:
+            colors = @[[UIColor colorWithRed:38/255.0 green:80/255.0 blue:235/255.0 alpha:1],
+                       [UIColor colorWithRed:65/255.0 green:105/255.0 blue:254/255.0 alpha:1]];
+            break;
+        case NNPurpleColor:
+            colors = @[[UIColor colorWithRed:163/255.0 green:38/255.0 blue:235/255.0 alpha:1],
+                       [UIColor colorWithRed:196/255.0 green:97/255.0 blue:254/255.0 alpha:1]];
+            break;
+        default:
+            colors = @[[UIColor colorWithRed:194/255.0 green:191/255.0 blue:192/255.0 alpha:1],
+                       [UIColor colorWithRed:203/255.0 green:201/255.0 blue:202/255.0 alpha:1]];
+            break;
     }
     
     self.padTop.fillColor = ((UIColor *)colors[0]).CGColor;

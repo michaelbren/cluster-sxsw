@@ -44,11 +44,7 @@
     self.view.backgroundColor = [UIColor colorWithRed:.88 green:.88 blue:.88 alpha:1];
     
     for (NSInteger i = 0; i < kPadCount; i++) {
-        NNPadControl *control = [[NNPadControl alloc] initWithPosition:i color:NNPinkColor];
-        
-        if (i % 3 == 0) {
-            control.isPlaying = NO;
-        }
+        NNPadControl *control = [[NNPadControl alloc] initWithPosition:i color:(NNColor)i];
         
         [self.view addSubview:control];
     }
