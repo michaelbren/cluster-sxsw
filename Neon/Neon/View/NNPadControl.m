@@ -9,18 +9,29 @@
 #import "NNPadControl.h"
 #import "NNUtility.h"
 
+@interface NNPadControl ()
+
+@end
+
 @implementation NNPadControl
 
 - (id)initWithFrame:(CGRect)frame
 {
+    CGFloat padding = 10;
+    
+    frame = CGRectInset(frame, padding, padding);
     self = [super initWithFrame:frame];
+    
     if (self) {
+    
+        CGFloat hue = randomFloat(0, 1);
         
-        self.backgroundColor = randomColor();
+        ((CAShapeLayer *)self.layer).path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:8].CGPath;
+        ((CAShapeLayer *)self.layer).fillColor = [UIColor colorWithHue:hue saturation:1 brightness:0.95 alpha:1].CGColor;
         
-//        ((CAShapeLayer *)self.layer).path = [UIBezierPath bezierPathWithRect:frame].CGPath;
-//        ((CAShapeLayer *)self.layer).strokeColor = [UIColor whiteColor].CGColor;
-//        ((CAShapeLayer *)self.layer).lineWidth = 14;
+        self.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:CGRectInset(self.bounds, -4, -4) cornerRadius:16].CGPath;
+        self.layer.shadowOpacity = .2;
+        self.layer.shadowColor = ((CAShapeLayer *)self.layer).fillColor;
     }
     return self;
 }

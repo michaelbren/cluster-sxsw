@@ -28,6 +28,8 @@
 {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1];
+    
     NSInteger padCount = 12;
     
     for (NSInteger i = 0; i < 12; i++) {
