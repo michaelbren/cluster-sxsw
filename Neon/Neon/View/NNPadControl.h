@@ -1,0 +1,18 @@
+//
+//  NNPadControl.h
+//  Neon
+//
+//  Created by Brad Zeis on 3/12/14.
+//
+//
+
+#import <UIKit/UIKit.h>
+
+#define kColumnCount 3
+
+@interface NNPadControl : UIControl
+
++ (CGSize)padSizeForPadCount:(NSInteger)padCount;
++ (CGPoint)padCenterForPosition:(NSInteger)position padCount:(NSInteger)padCount;
+
+@end

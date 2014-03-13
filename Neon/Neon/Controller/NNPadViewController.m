@@ -8,6 +8,8 @@
 
 #import "NNPadViewController.h"
 
+#import "NNPadControl.h"
+
 @interface NNPadViewController ()
 
 @end
@@ -18,7 +20,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -26,24 +27,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    NSInteger padCount = 12;
+    
+    for (NSInteger i = 0; i < 12; i++) {
+        NNPadControl *control = [[NNPadControl alloc] initWithFrame:({
+            CGRect frame = CGRectZero;
+            frame.origin = [NNPadControl padCenterForPosition:i padCount:padCount];
+            frame.size = [NNPadControl padSizeForPadCount:padCount];
+            frame;
+        })];
+        
+        [self.view addSubview:control];
+    }
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

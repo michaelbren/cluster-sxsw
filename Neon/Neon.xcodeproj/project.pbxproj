@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A98B977018D1650C00D3BE55 /* NNPadControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A98B976F18D1650C00D3BE55 /* NNPadControl.m */; };
+		A98B977418D17EC900D3BE55 /* NNUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A98B977318D17EC900D3BE55 /* NNUtility.m */; };
 		A9B36E0118D15441009004FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B36E0018D15441009004FB /* Foundation.framework */; };
 		A9B36E0318D15441009004FB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B36E0218D15441009004FB /* CoreGraphics.framework */; };
 		A9B36E0518D15441009004FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B36E0418D15441009004FB /* UIKit.framework */; };
@@ -20,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A98B976E18D1650C00D3BE55 /* NNPadControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NNPadControl.h; path = View/NNPadControl.h; sourceTree = "<group>"; };
+		A98B976F18D1650C00D3BE55 /* NNPadControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NNPadControl.m; path = View/NNPadControl.m; sourceTree = "<group>"; };
+		A98B977218D17EC900D3BE55 /* NNUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNUtility.h; sourceTree = "<group>"; };
+		A98B977318D17EC900D3BE55 /* NNUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNUtility.m; sourceTree = "<group>"; };
 		A9B36DFD18D15441009004FB /* Neon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9B36E0018D15441009004FB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A9B36E0218D15441009004FB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -54,6 +60,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A98B976D18D164D500D3BE55 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A98B976E18D1650C00D3BE55 /* NNPadControl.h */,
+				A98B976F18D1650C00D3BE55 /* NNPadControl.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A98B977118D17EAF00D3BE55 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A98B977218D17EC900D3BE55 /* NNUtility.h */,
+				A98B977318D17EC900D3BE55 /* NNUtility.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		A9B36DF418D15441009004FB = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +112,8 @@
 			children = (
 				A9B36E2F18D154AF009004FB /* App Delegate */,
 				E171DE1F18D1637D0093F127 /* Controller */,
+				A98B976D18D164D500D3BE55 /* View */,
+				A98B977118D17EAF00D3BE55 /* Utility */,
 				A9B36E1218D15442009004FB /* Images.xcassets */,
 				A9B36E0718D15441009004FB /* Supporting Files */,
 			);
@@ -193,7 +219,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A98B977418D17EC900D3BE55 /* NNUtility.m in Sources */,
 				E171DE2218D163960093F127 /* NNPadViewController.m in Sources */,
+				A98B977018D1650C00D3BE55 /* NNPadControl.m in Sources */,
 				E171DE1E18D163730093F127 /* NNMediaPickerViewController.m in Sources */,
 				A9B36E1118D15442009004FB /* NNAppDelegate.m in Sources */,
 				A9B36E0D18D15442009004FB /* main.m in Sources */,
