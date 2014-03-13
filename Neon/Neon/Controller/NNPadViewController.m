@@ -27,7 +27,11 @@
 
 - (id)initWithSongChoice:(MPMediaItemCollection *) mediaItemCollection
 {
-    
+    self = [super initWithNibName:nil bundle:nil];
+    if (self) {
+        
+    }
+    return self;
 }
 
 - (void)viewDidLoad
