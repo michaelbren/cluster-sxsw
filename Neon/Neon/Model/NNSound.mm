@@ -39,7 +39,7 @@
 
 - (void)setURL:(NSURL *)url
 {
-    [self pause];
+    [self.audioPlayer stop];
     NSError *error;
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
 }

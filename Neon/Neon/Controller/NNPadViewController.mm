@@ -27,6 +27,10 @@
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
+        
+        AVAudioSession *session = [AVAudioSession sharedInstance];
+        [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+        
         self.soundEngine = [[NNSoundEngine alloc] initWithMediaItem:mediaItem];
         [self.soundEngine start];
     }
@@ -63,17 +67,14 @@
 
 - (void)padControlWasHeld:(NNPadControl *)padControl
 {
-    NSLog(@"held");
     NSArray *pathComponents = [NSArray arrayWithObjects:
                                [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
                                @"MyAudioMemo.m4a",
                                nil];
     NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
-    
+
     // Setup audio session
-    AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setCategory:AVAudioSessionCategoryRecord error:nil];
-    
+
     // Define the recorder setting
     NSMutableDictionary *recordSetting = [[NSMutableDictionary alloc] init];
     
@@ -95,16 +96,12 @@
 
 - (void)padControlWasReleased:(NNPadControl *)padControl
 {
-    NSLog(@"released");
     if (self.recorder.recording)
     {
         // Stop recording
         [self.recorder stop];
         
         [self.soundEngine setURL:self.recorder.url forPalette:padControl.padPosition];
-        
-        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-        [audioSession setActive:NO error:nil];
     }
 }
 
