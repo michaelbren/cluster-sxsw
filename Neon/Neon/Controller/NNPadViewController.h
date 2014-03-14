@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 #import "NNMediaPickerViewController.h"
 #import "NNPadControl.h"
+//import AVAudioRecorder shit
 
-@interface NNPadViewController : UIViewController <NNPadControlDelegate>
+@interface NNPadViewController : UIViewController <NNPadControlDelegate, AVAudioRecorderDelegate, AVAudioPlayerDelegate>
 
 - (id)initWithSongChoice:(MPMediaItem *)item;
 
