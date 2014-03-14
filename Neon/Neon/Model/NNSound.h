@@ -8,19 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <MediaPlayer/MediaPlayer.h>
-
-#import "Novocaine.h"
-#import "AudioFileReader.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface NNSound : NSObject
 
-@property Novocaine *audioManager;
-@property AudioFileReader *audioReader;
-@property BOOL paused;
+@property AVAudioPlayer *audioPlayer;
 
-- (instancetype)initWithURL:(NSURL *)url audioManager:(Novocaine *)audioManager;
+- (instancetype)initWithURL:(NSURL *)url;
 - (void)play;
-
-- (void)getData:(float *)data numFrames:(UInt32)numberFrames numChannels:(UInt32)numChannels;
+- (void)pause;
 
 @end

@@ -8,38 +8,33 @@
 
 #import "NNSound.h"
 #import "NNUtility.h"
-#import "AudioFileReader.h"
 
 @interface NNSound ()
-
-@property CGFloat length;
-@property NSInteger currentSegment;
-@property NSInteger carryFrames;
 
 @end
 
 @implementation NNSound
 
-- (instancetype)initWithURL:(NSURL *)url audioManager:(Novocaine *)audioManager
+- (instancetype)initWithURL:(NSURL *)url
 {
     self = [super init];
     if (self) {
-        self.audioReader = [[AudioFileReader alloc] initWithAudioFileURL:url
-                                                             samplingRate:audioManager.samplingRate
-                                                             numChannels:audioManager.numOutputChannels];
+        NSError *error;
+        self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
     }
     return self;
 }
 
 - (void)play
 {
-    [self.audioReader play];
-    self.audioReader.currentTime = 0;
+    self.audioPlayer.currentTime = 0;
+    [self.audioPlayer prepareToPlay];
+    [self.audioPlayer play];
 }
 
-- (void)getData:(float *)data numFrames:(UInt32)numberFrames numChannels:(UInt32)numChannels
+- (void)pause
 {
-    [self.audioReader retrieveFreshAudio:data numFrames:numberFrames numChannels:numChannels];
+    [self.audioPlayer pause];
 }
 
 @end

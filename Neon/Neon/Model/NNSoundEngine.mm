@@ -6,6 +6,7 @@
 //
 //
 
+#import <AVFoundation/AVFoundation.h>
 #import "NNSoundEngine.h"
 #import "NNSound.h"
 
@@ -29,8 +30,6 @@
     self = [super init];
     if (self) {
         
-        self.audioManager = [Novocaine audioManager];
-        
         self.queue = [[NSMutableArray alloc] init];
         self.loopingQueue = [[NSMutableArray alloc] init];
         
@@ -44,7 +43,7 @@
         for (NSInteger i = 0; i < 8; i++) {
             NSURL *url = [[NSBundle mainBundle] URLForResource:[NSString stringWithFormat:@"%ld", (long)i] withExtension:@"wav"];
             
-            NNSound *sound = [[NNSound alloc] initWithURL:url audioManager:self.audioManager];
+            NNSound *sound = [[NNSound alloc] initWithURL:url];
             [self.loops addObject:sound];
         }
     }
@@ -54,32 +53,6 @@
 - (void)start
 {
     [self processQueue];
-    
-    __block NNSoundEngine *wkSelf = self;
-    [self.audioManager setOutputBlock:^(float *data, UInt32 numFrames, UInt32 numChannels) {
-        NSMutableArray *sounds = [[wkSelf.playing allKeys] mutableCopy];
-        [sounds addObjectsFromArray:[wkSelf.looping allKeys]];
-        
-        for (NSInteger i = 0; i < numFrames * numChannels; i++) {
-            data[i] = 0;
-        }
-        
-        for (NSNumber *loopNumber in sounds) {
-            NNSound *sound = wkSelf.loops[[loopNumber integerValue]];
-            
-            float *soundData = (float *)malloc(sizeof(float) * numFrames * numChannels);
-            [sound getData:soundData numFrames:numFrames numChannels:numChannels];
-            
-            for (NSInteger i = 0; i < numFrames * numChannels; i++) {
-                data[i] = data[i] + soundData[i];
-                NSLog(@"%f", data[i]);
-            }
-            
-            free(soundData);
-        }
-    }];
-    
-    [self.audioManager play];
 }
 
 - (void)enqueuePalette:(NSInteger)palette looping:(BOOL)looping
@@ -88,11 +61,15 @@
         [self.loopingQueue addObject:@(palette)];
         [self.queue removeObject:@(palette)];
         
+        NNSound *sound = self.loops[palette];
+        [sound pause];
+        [self.playing removeObjectForKey:@(palette)];
+        
     } else {
         if (self.looping[@(palette)]) {
             // Remove looping loops
             NNSound *sound = self.loops[palette];
-            sound.paused = YES;
+            [sound pause];
             [self.looping removeObjectForKey:@(palette)];
             
         } else if (![self.queue containsObject:@(palette)]) {
@@ -120,6 +97,9 @@
     for (NSNumber *loopNumber in self.playing) {
         if ([self.playing[loopNumber] integerValue] != self.currentBeat) {
             newPlaying[loopNumber] = self.playing[loopNumber];
+        } else {
+            NNSound *sound = newPlaying[loopNumber];
+            [sound pause];
         }
     }
     self.playing = newPlaying;
