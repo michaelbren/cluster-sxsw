@@ -55,7 +55,7 @@
 
 - (void)padControlWasDoubleTapped:(NNPadControl *)padControl
 {
-//    [self.soundEngine enqueuePalette:padControl.padPosition looping:YES];
+    [self.soundEngine enqueuePalette:padControl.padPosition looping:YES];
 }
 
 @end
