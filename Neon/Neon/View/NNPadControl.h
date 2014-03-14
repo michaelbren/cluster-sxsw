@@ -15,14 +15,14 @@
 #define kTopPadding 10
 
 typedef NS_ENUM(NSInteger, NNColor) {
-    NNYellowColor,
     NNOrangeColor,
-    NNRedColor,
+    NNYellowColor,
     NNGreenColor,
     NNBlueColor,
     NNDarkBlueColor,
-    NNPinkColor,
     NNPurpleColor,
+    NNPinkColor,
+    NNRedColor,
     NNGrayColor,
 };
 

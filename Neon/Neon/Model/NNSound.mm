@@ -20,17 +20,13 @@
 
 @implementation NNSound
 
-- (instancetype)initWithURL:(NSURL *)url
+- (instancetype)initWithURL:(NSURL *)url audioManager:(Novocaine *)audioManager
 {
     self = [super init];
     if (self) {
-        
-        self.audioManager = [Novocaine audioManager];
-        [self.audioManager play];
-        
         self.audioReader = [[AudioFileReader alloc] initWithAudioFileURL:url
-                                                             samplingRate:self.audioManager.samplingRate
-                                                             numChannels:self.audioManager.numOutputChannels];
+                                                             samplingRate:audioManager.samplingRate
+                                                             numChannels:audioManager.numOutputChannels];
     }
     return self;
 }
@@ -39,22 +35,11 @@
 {
     [self.audioReader play];
     self.audioReader.currentTime = 0;
-    
-    __block NNSound *wkSelf = self;
-    [self.audioManager setOutputBlock:^(float *data, UInt32 numFrames, UInt32 numChannels) {
-        [wkSelf.audioReader retrieveFreshAudio:data numFrames:numFrames numChannels:numChannels];
-    }];
 }
 
-- (void)loadSegments:(NSArray *)segments
+- (void)getData:(float *)data numFrames:(UInt32)numberFrames numChannels:(UInt32)numChannels
 {
-    self.segments = [[NSMutableArray alloc] init];
-    
-    for (NSDictionary *segment in segments) {
-        [(NSMutableArray *)self.segments addObject:@{@"start" : @([segment[@"start"] floatValue]),
-                                                     @"duration" : @((NSInteger)([segment[@"duration"] floatValue] * self.audioManager.samplingRate))}];
-        NSLog(@"%@ %@", segment[@"duration"], self.segments.lastObject[@"duration"]);
-    }
+    [self.audioReader retrieveFreshAudio:data numFrames:numberFrames numChannels:numChannels];
 }
 
 @end

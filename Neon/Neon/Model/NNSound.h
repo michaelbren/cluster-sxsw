@@ -16,13 +16,11 @@
 
 @property Novocaine *audioManager;
 @property AudioFileReader *audioReader;
-@property NSInteger tempo;
+@property BOOL paused;
 
-@property NSArray *segments;
-
-- (instancetype)initWithURL:(NSURL *)url;
-- (void)loadSegments:(NSArray *)segments;
-
+- (instancetype)initWithURL:(NSURL *)url audioManager:(Novocaine *)audioManager;
 - (void)play;
+
+- (void)getData:(float *)data numFrames:(UInt32)numberFrames numChannels:(UInt32)numChannels;
 
 @end

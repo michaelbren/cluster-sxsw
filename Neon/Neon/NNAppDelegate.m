@@ -18,8 +18,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UINavigationController *navController = [[UINavigationController alloc] init];
-    NNMediaPickerViewController *mediaPicker = [[NNMediaPickerViewController alloc] init];
-    [navController pushViewController:mediaPicker animated:NO];
+    [navController pushViewController:[[NNPadViewController alloc] initWithSongChoice:nil] animated:NO];
     self.window.rootViewController = navController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

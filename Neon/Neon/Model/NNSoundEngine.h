@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "Novocaine.h"
 
 @interface NNSoundEngine : NSObject
+
+@property Novocaine *audioManager;
 
 - (instancetype)initWithMediaItem:(MPMediaItem *)item;
 
