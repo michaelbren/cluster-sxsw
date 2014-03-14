@@ -50,9 +50,9 @@
 //        [self addGestureRecognizer:doubleTap];
         
         //Maybe later
-        /*UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
+        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
         longPress.minimumPressDuration = 0.25;
-        [self addGestureRecognizer:longPress];*/
+        [self addGestureRecognizer:longPress];
     }
     return self;
 }

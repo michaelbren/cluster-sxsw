@@ -1,3 +1,4 @@
+
 //
 //  NNPadViewController.m
 //  Neon
@@ -16,6 +17,7 @@
 @interface NNPadViewController ()
 
 @property NNSoundEngine *soundEngine;
+@property AVAudioRecorder *recorder;
 
 @end
 
@@ -39,6 +41,37 @@
     
     self.view.backgroundColor = [UIColor colorWithRed:.88 green:.88 blue:.88 alpha:1];
     
+    
+    //------------------------------------------------
+    
+    // Set the audio file
+    NSArray *pathComponents = [NSArray arrayWithObjects:
+                               [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
+                               @"MyAudioMemo.m4a",
+                               nil];
+    NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
+    
+    // Setup audio session
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    [session setCategory:AVAudioSessionCategoryRecord error:nil];
+    
+    // Define the recorder setting
+    NSMutableDictionary *recordSetting = [[NSMutableDictionary alloc] init];
+    
+    [recordSetting setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
+    [recordSetting setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
+    [recordSetting setValue:[NSNumber numberWithInt: 2] forKey:AVNumberOfChannelsKey];
+    
+    // Initiate and prepare the recorder
+    self.recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSetting error:NULL];
+    self.recorder.delegate = self;
+    self.recorder.meteringEnabled = YES;
+    [self.recorder prepareToRecord];
+    
+    //------------------------------------------------
+
+    
+    
     for (NSInteger i = 0; i < kPadCount; i++) {
         NNPadControl *control = [[NNPadControl alloc] initWithPosition:i color:(NNColor)i];
         control.delegate = self;
@@ -56,6 +89,27 @@
 - (void)padControlWasDoubleTapped:(NNPadControl *)padControl
 {
 //    [self.soundEngine enqueuePalette:padControl.padPosition looping:YES];
+}
+
+- (void)padControlWasHeld:(NNPadControl *)padControl
+{
+    if(!self.recorder.recording)
+    {
+        // Start recording
+        [self.recorder record];
+    }
+}
+
+- (void)padControlWasReleased:(NNPadControl *)padControl
+{
+    if(self.recorder.recording)
+    {
+        // Stop recording
+        [self.recorder stop];
+        
+        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+        [audioSession setActive:NO error:nil];
+    }
 }
 
 @end
