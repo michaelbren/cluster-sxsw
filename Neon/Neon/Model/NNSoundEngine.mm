@@ -78,6 +78,12 @@
     }
 }
 
+- (void)setURL:(NSURL *)url forPalette:(NSInteger)palette
+{
+    NNSound *sound = self.loops[palette];
+    [sound setURL:url];
+}
+
 - (void)processQueue
 {
     for (NSNumber *loopNumber in self.loopingQueue) {

@@ -18,4 +18,6 @@
 - (void)play;
 - (void)pause;
 
+- (void)setURL:(NSURL *)url;
+
 @end

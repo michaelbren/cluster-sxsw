@@ -16,6 +16,7 @@
 - (void)start;
 
 - (void)enqueuePalette:(NSInteger)palette looping:(BOOL)looping;
+- (void)setURL:(NSURL *)url forPalette:(NSInteger)palette;
 - (void)processQueue;
 
 @end

@@ -41,10 +41,29 @@
     
     self.view.backgroundColor = [UIColor colorWithRed:.88 green:.88 blue:.88 alpha:1];
     
-    
-    //------------------------------------------------
-    
-    // Set the audio file
+    // Instantiate Pads
+    for (NSInteger i = 0; i < kPadCount; i++) {
+        NNPadControl *control = [[NNPadControl alloc] initWithPosition:i color:(NNColor)i];
+        control.delegate = self;
+        [self.view addSubview:control];
+    }
+}
+
+
+
+- (void)padControlWasTapped:(NNPadControl *)padControl
+{
+    [self.soundEngine enqueuePalette:padControl.padPosition looping:NO];
+}
+
+- (void)padControlWasDoubleTapped:(NNPadControl *)padControl
+{
+    [self.soundEngine enqueuePalette:padControl.padPosition looping:YES];
+}
+
+- (void)padControlWasHeld:(NNPadControl *)padControl
+{
+    NSLog(@"held");
     NSArray *pathComponents = [NSArray arrayWithObjects:
                                [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
                                @"MyAudioMemo.m4a",
@@ -67,45 +86,22 @@
     self.recorder.delegate = self;
     self.recorder.meteringEnabled = YES;
     [self.recorder prepareToRecord];
-    
-    //------------------------------------------------
-
-    
-    
-    for (NSInteger i = 0; i < kPadCount; i++) {
-        NNPadControl *control = [[NNPadControl alloc] initWithPosition:i color:(NNColor)i];
-        control.delegate = self;
-        [self.view addSubview:control];
-    }
-}
-
-
-
-- (void)padControlWasTapped:(NNPadControl *)padControl
-{
-    [self.soundEngine enqueuePalette:padControl.padPosition looping:NO];
-}
-
-- (void)padControlWasDoubleTapped:(NNPadControl *)padControl
-{
-    [self.soundEngine enqueuePalette:padControl.padPosition looping:YES];
-}
-
-- (void)padControlWasHeld:(NNPadControl *)padControl
-{
+   
     if(!self.recorder.recording)
     {
-        // Start recording
         [self.recorder record];
     }
 }
 
 - (void)padControlWasReleased:(NNPadControl *)padControl
 {
-    if(self.recorder.recording)
+    NSLog(@"released");
+    if (self.recorder.recording)
     {
         // Stop recording
         [self.recorder stop];
+        
+        [self.soundEngine setURL:self.recorder.url forPalette:padControl.padPosition];
         
         AVAudioSession *audioSession = [AVAudioSession sharedInstance];
         [audioSession setActive:NO error:nil];
