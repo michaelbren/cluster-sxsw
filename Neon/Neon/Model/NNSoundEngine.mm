@@ -36,7 +36,7 @@
         self.playing = [[NSMutableDictionary alloc] init];
         self.looping = [[NSMutableDictionary alloc] init];
         
-        self.tempo = 112;
+        self.tempo = 136;
         self.sperbeat = 1.0 / self.tempo * 60;
         
         self.loops = [[NSMutableArray alloc] init];

@@ -73,8 +73,6 @@
                                nil];
     NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
 
-    // Setup audio session
-
     // Define the recorder setting
     NSMutableDictionary *recordSetting = [[NSMutableDictionary alloc] init];
     

@@ -14,14 +14,6 @@
 		A91885D618D1EBF000D2C4FE /* NNSoundEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = A91885D518D1EBF000D2C4FE /* NNSoundEngine.mm */; };
 		A91885D818D1F00B00D2C4FE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91885D718D1F00B00D2C4FE /* AVFoundation.framework */; };
 		A91885DA18D1F01100D2C4FE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91885D918D1F01100D2C4FE /* CoreMedia.framework */; };
-		A9543AA418D2345500A4FD25 /* 0.wav in Resources */ = {isa = PBXBuildFile; fileRef = A9543A9C18D2345500A4FD25 /* 0.wav */; };
-		A9543AA518D2345500A4FD25 /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = A9543A9D18D2345500A4FD25 /* 1.wav */; };
-		A9543AA618D2345500A4FD25 /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A9543A9E18D2345500A4FD25 /* 2.wav */; };
-		A9543AA718D2345500A4FD25 /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = A9543A9F18D2345500A4FD25 /* 3.wav */; };
-		A9543AA818D2345500A4FD25 /* 4.wav in Resources */ = {isa = PBXBuildFile; fileRef = A9543AA018D2345500A4FD25 /* 4.wav */; };
-		A9543AA918D2345500A4FD25 /* 5.wav in Resources */ = {isa = PBXBuildFile; fileRef = A9543AA118D2345500A4FD25 /* 5.wav */; };
-		A9543AAA18D2345500A4FD25 /* 6.wav in Resources */ = {isa = PBXBuildFile; fileRef = A9543AA218D2345500A4FD25 /* 6.wav */; };
-		A9543AAB18D2345500A4FD25 /* 7.wav in Resources */ = {isa = PBXBuildFile; fileRef = A9543AA318D2345500A4FD25 /* 7.wav */; };
 		A98B977018D1650C00D3BE55 /* NNPadControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A98B976F18D1650C00D3BE55 /* NNPadControl.m */; };
 		A98B977418D17EC900D3BE55 /* NNUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A98B977318D17EC900D3BE55 /* NNUtility.m */; };
 		A98B977E18D1E98800D3BE55 /* AudioFileReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = A98B977718D1E98800D3BE55 /* AudioFileReader.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -38,6 +30,14 @@
 		E171DE1E18D163730093F127 /* NNMediaPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E171DE1D18D163730093F127 /* NNMediaPickerViewController.m */; };
 		E171DE2218D163960093F127 /* NNPadViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = E171DE2118D163960093F127 /* NNPadViewController.mm */; };
 		E171DE2418D170690093F127 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E171DE2318D170690093F127 /* MediaPlayer.framework */; };
+		E1B06BB118D3C07D00B896A0 /* 0.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1B06BA918D3C07D00B896A0 /* 0.wav */; };
+		E1B06BB218D3C07D00B896A0 /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1B06BAA18D3C07D00B896A0 /* 1.wav */; };
+		E1B06BB318D3C07D00B896A0 /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1B06BAB18D3C07D00B896A0 /* 2.wav */; };
+		E1B06BB418D3C07D00B896A0 /* 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1B06BAC18D3C07D00B896A0 /* 3.wav */; };
+		E1B06BB518D3C07D00B896A0 /* 4.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1B06BAD18D3C07D00B896A0 /* 4.wav */; };
+		E1B06BB618D3C07D00B896A0 /* 5.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1B06BAE18D3C07D00B896A0 /* 5.wav */; };
+		E1B06BB718D3C07D00B896A0 /* 6.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1B06BAF18D3C07D00B896A0 /* 6.wav */; };
+		E1B06BB818D3C07D00B896A0 /* 7.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1B06BB018D3C07D00B896A0 /* 7.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,14 +50,6 @@
 		A91885D518D1EBF000D2C4FE /* NNSoundEngine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NNSoundEngine.mm; path = Model/NNSoundEngine.mm; sourceTree = "<group>"; };
 		A91885D718D1F00B00D2C4FE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A91885D918D1F01100D2C4FE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		A9543A9C18D2345500A4FD25 /* 0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 0.wav; sourceTree = "<group>"; };
-		A9543A9D18D2345500A4FD25 /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
-		A9543A9E18D2345500A4FD25 /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
-		A9543A9F18D2345500A4FD25 /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
-		A9543AA018D2345500A4FD25 /* 4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 4.wav; sourceTree = "<group>"; };
-		A9543AA118D2345500A4FD25 /* 5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 5.wav; sourceTree = "<group>"; };
-		A9543AA218D2345500A4FD25 /* 6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 6.wav; sourceTree = "<group>"; };
-		A9543AA318D2345500A4FD25 /* 7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 7.wav; sourceTree = "<group>"; };
 		A98B976E18D1650C00D3BE55 /* NNPadControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NNPadControl.h; path = View/NNPadControl.h; sourceTree = "<group>"; };
 		A98B976F18D1650C00D3BE55 /* NNPadControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NNPadControl.m; path = View/NNPadControl.m; sourceTree = "<group>"; };
 		A98B977218D17EC900D3BE55 /* NNUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNUtility.h; sourceTree = "<group>"; };
@@ -87,6 +79,14 @@
 		E171DE2018D163960093F127 /* NNPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NNPadViewController.h; path = Controller/NNPadViewController.h; sourceTree = "<group>"; };
 		E171DE2118D163960093F127 /* NNPadViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NNPadViewController.mm; path = Controller/NNPadViewController.mm; sourceTree = "<group>"; };
 		E171DE2318D170690093F127 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		E1B06BA918D3C07D00B896A0 /* 0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 0.wav; sourceTree = "<group>"; };
+		E1B06BAA18D3C07D00B896A0 /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
+		E1B06BAB18D3C07D00B896A0 /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
+		E1B06BAC18D3C07D00B896A0 /* 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3.wav; sourceTree = "<group>"; };
+		E1B06BAD18D3C07D00B896A0 /* 4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 4.wav; sourceTree = "<group>"; };
+		E1B06BAE18D3C07D00B896A0 /* 5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 5.wav; sourceTree = "<group>"; };
+		E1B06BAF18D3C07D00B896A0 /* 6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 6.wav; sourceTree = "<group>"; };
+		E1B06BB018D3C07D00B896A0 /* 7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 7.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,14 +190,14 @@
 		A9B36E0618D15441009004FB /* Neon */ = {
 			isa = PBXGroup;
 			children = (
-				A9543A9C18D2345500A4FD25 /* 0.wav */,
-				A9543A9D18D2345500A4FD25 /* 1.wav */,
-				A9543A9E18D2345500A4FD25 /* 2.wav */,
-				A9543A9F18D2345500A4FD25 /* 3.wav */,
-				A9543AA018D2345500A4FD25 /* 4.wav */,
-				A9543AA118D2345500A4FD25 /* 5.wav */,
-				A9543AA218D2345500A4FD25 /* 6.wav */,
-				A9543AA318D2345500A4FD25 /* 7.wav */,
+				E1B06BA918D3C07D00B896A0 /* 0.wav */,
+				E1B06BAA18D3C07D00B896A0 /* 1.wav */,
+				E1B06BAB18D3C07D00B896A0 /* 2.wav */,
+				E1B06BAC18D3C07D00B896A0 /* 3.wav */,
+				E1B06BAD18D3C07D00B896A0 /* 4.wav */,
+				E1B06BAE18D3C07D00B896A0 /* 5.wav */,
+				E1B06BAF18D3C07D00B896A0 /* 6.wav */,
+				E1B06BB018D3C07D00B896A0 /* 7.wav */,
 				A9B36E2F18D154AF009004FB /* App Delegate */,
 				E171DE1F18D1637D0093F127 /* Controller */,
 				A98B976D18D164D500D3BE55 /* View */,
@@ -297,15 +297,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9543AA718D2345500A4FD25 /* 3.wav in Resources */,
-				A9543AA418D2345500A4FD25 /* 0.wav in Resources */,
+				E1B06BB418D3C07D00B896A0 /* 3.wav in Resources */,
+				E1B06BB118D3C07D00B896A0 /* 0.wav in Resources */,
 				A9B36E0B18D15441009004FB /* InfoPlist.strings in Resources */,
-				A9543AA818D2345500A4FD25 /* 4.wav in Resources */,
-				A9543AA518D2345500A4FD25 /* 1.wav in Resources */,
-				A9543AA618D2345500A4FD25 /* 2.wav in Resources */,
-				A9543AAA18D2345500A4FD25 /* 6.wav in Resources */,
-				A9543AA918D2345500A4FD25 /* 5.wav in Resources */,
-				A9543AAB18D2345500A4FD25 /* 7.wav in Resources */,
+				E1B06BB518D3C07D00B896A0 /* 4.wav in Resources */,
+				E1B06BB218D3C07D00B896A0 /* 1.wav in Resources */,
+				E1B06BB318D3C07D00B896A0 /* 2.wav in Resources */,
+				E1B06BB718D3C07D00B896A0 /* 6.wav in Resources */,
+				E1B06BB618D3C07D00B896A0 /* 5.wav in Resources */,
+				E1B06BB818D3C07D00B896A0 /* 7.wav in Resources */,
 				A9B36E1318D15442009004FB /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
